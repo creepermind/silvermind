@@ -1,6 +1,10 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
+
 export default function Home() {
+  const router = useRouter();
+
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white px-6 py-12">
       {/* Navbar */}
@@ -31,7 +35,10 @@ export default function Home() {
             Emekli profesyoneller için kariyer, etkileşim ve fırsatlar ağı
           </p>
           <div className="flex gap-4">
-            <button className="bg-white text-[#0f172a] font-semibold px-6 py-2 rounded-md hover:bg-gray-200 transition">
+            <button
+              className="bg-white text-[#0f172a] font-semibold px-6 py-2 rounded-md hover:bg-gray-200 transition"
+              onClick={() => router.push('/signup')}
+            >
               Başlayın
             </button>
             <button className="border border-white text-white px-6 py-2 rounded-md hover:bg-white hover:text-black transition">
